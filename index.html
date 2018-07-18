@@ -1,0 +1,38 @@
+<html>
+    <title>Edit this page</title>
+   <head>
+    <link rel="stylesheet" href="CSS/styles.css">
+    </head>
+    <body>
+    <section>
+
+    <input type="image" src="CSS/download256.png" id="pick">
+    <script src="filepicker.js"></script>
+
+	<script>
+		function initPicker() {
+			var picker = new FilePicker({
+				apiKey: 'AIzaSyDE3cQVyu3ahiTdpWbuMstrrcK07ImhCDw',
+				clientId: '104151419196-ubiqtgu754n0nj6jddklqkp02btq9j5j.apps.googleusercontent.com',
+				buttonEl: document.getElementById('pick'),
+				onSelect: function(file) {
+					console.log(file);
+					alert('Selected ' + file.alternateLink);
+                    if(file.downloadUrl)
+                        { window.open(file.downloadUrl, '', 'width=1000');}
+                    else
+                        {window.open(file.alternateLink, '', 'width=1000');}
+
+
+				}
+			});
+		}
+	</script>
+	<a href="gdu/a.html">
+      <img src="CSS/upload256.png">
+      </a>
+  </section>
+     <script src="https://www.google.com/jsapi?key=AIzaSyDE3cQVyu3ahiTdpWbuMstrrcK07ImhCDw"></script>
+	<script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
+    </body>
+</html>
